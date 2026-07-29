@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% from "icons.html" import icon %}
+{% block content %}
+
+<header class="quest-hero" data-hero>
+  <div class="quest-hero-motifs" aria-hidden="true">
+    <span style="--x:8%; --y:18%; --r:-12deg; --s:1.15;">🪨</span>
+    <span style="--x:82%; --y:12%; --r:10deg; --s:0.9;">🛡️</span>
+    <span style="--x:18%; --y:72%; --r:8deg; --s:0.85;">🕊️</span>
+    <span style="--x:70%; --y:68%; --r:-8deg; --s:1.05;">⭐</span>
+    <span style="--x:46%; --y:30%; --r:-4deg; --s:0.7;">🎯</span>
+    <span style="--x:90%; --y:80%; --r:14deg; --s:0.8;">🧩</span>
+  </div>
+  <a href="{{ url_for('more_hub') }}" class="quest-hero-back" aria-label="Back to More">{{ icon('chevron-left', 20) }}</a>
+  <div class="quest-hero-inner" data-load>
+    <p class="quest-hero-eyebrow">Bible adventures</p>
+    <h1 class="quest-hero-title">Kids Games</h1>
+    <p class="quest-hero-sub">Play together. No sign-in needed — signing in is only for publishing a score to the leaderboard.</p>
+  </div>
+</header>
+
+<main class="bible" style="padding-top:1.5rem;">
+
+  <nav class="bible-list">
+    <a href="{{ url_for('memory_game') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('grid', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Memory Match</span>
+        <span class="bible-row-sub">Flip cards and find the matching pairs</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='memory_game') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Memory Match leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('trivia_challenge') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('trophy', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Bible Trivia Challenge</span>
+        <span class="bible-row-sub">Climb the ladder to a million points</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='trivia_challenge') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Trivia Challenge leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('trivia_football') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('target', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Bible Trivia Football</span>
+        <span class="bible-row-sub">Answer right to gain yards and score</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='trivia_football') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Trivia Football leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('manna_maze') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('gamepad', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Manna Maze</span>
+        <span class="bible-row-sub">Collect the manna, dodge the shadow</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='manna_maze') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Manna Maze leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('giant_slayer') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('target', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Giant Slayer</span>
+        <span class="bible-row-sub">Sling stones and take down Goliath's camp</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='giant_slayer') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Giant Slayer leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('chess_game') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('grid', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Chess</span>
+        <span class="bible-row-sub">Two players, or take on the computer</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='chess') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Chess leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('verse_builder') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('book', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Verse Builder</span>
+        <span class="bible-row-sub">Put a scrambled verse back in order</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='verse_builder') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Verse Builder leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('books_sprint') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('bible-tab', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Books Sprint</span>
+        <span class="bible-row-sub">Which book comes first? Beat the clock</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='books_sprint') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Books Sprint leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+
+    <a href="{{ url_for('lost_sheep') }}" class="bible-row">
+      <span class="bible-row-icon">{{ icon('search', 20) }}</span>
+      <span class="bible-row-body">
+        <span class="bible-row-title">Lost Sheep</span>
+        <span class="bible-row-sub">Search the field and bring them all home</span>
+      </span>
+      {{ icon('chevron-right', 18) }}
+    </a>
+    <a href="{{ url_for('game_leaderboard', game_key='lost_sheep') }}" class="bible-row bible-row-sub-link">
+      <span class="bible-row-icon">{{ icon('trophy', 18) }}</span>
+      <span class="bible-row-body"><span class="bible-row-sub">Lost Sheep leaderboard</span></span>
+      {{ icon('chevron-right', 16) }}
+    </a>
+  </nav>
+
+</main>
+
+<style>
+  .bible-row-sub-link {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: -0.4rem;
+    margin-bottom: 0.3rem;
+    opacity: 0.85;
+  }
+</style>
+
+{% endblock %}
